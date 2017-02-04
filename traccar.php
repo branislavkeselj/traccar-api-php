@@ -96,49 +96,49 @@ class traccar {
         return self::curl('/api/session','DELETE',$cookie ,'',array(self::$urlencoded));
     }
 
-    public static function addGeofance($name,$area,$cookie) {
+    public static function addGeofence($name,$area,$cookie) {
 
         $data='{"id":-1,"name":"'.$name.'","description":"","area":"'.$area.'"}';
 
         return self::curl('/api/geofences','POST',$cookie ,$data,array(self::$json));
     }
 
-    public static function editGeofance($id,$name,$area,$cookie) {
+    public static function editGeofence($id,$name,$area,$cookie) {
 
         $data='{"id":'.$id.',"attributes":{},"name":"'.$name.'","description":"","area":"'.$area.'"}';
 
         return self::curl('/api/geofences/'.$id,'PUT',$cookie,$data,array(self::$json));
     }
 
-    public static function deleteGeofance($id,$name,$area,$cookie) {
+    public static function deleteGeofence($id,$name,$area,$cookie) {
 
         $data='{"id":'.$id.',"attributes":{},"name":"'.$name.'","description":"","area":"'.$area.'"}';
 
         return self::curl('/api/geofences/'.$id,'DELETE',$cookie ,$data,array(self::$json));
     }
 
-    public static function addGeofancePermisions($userId,$geofenceId,$cookie) {
+    public static function addGeofencePermissions($userId,$geofenceId,$cookie) {
 
         $data='{"userId":'.$userId.',"geofenceId":'.$geofenceId.'}';
 
         return self::curl('/api/permissions/geofences','POST',$cookie ,$data,array(self::$json));
     }
 
-    public static function deleteGeofancePermisions($userId,$geofenceId,$cookie) {
+    public static function deleteGeofencePermissions($userId,$geofenceId,$cookie) {
 
         $data='{"userId":'.$userId.',"geofenceId":'.$geofenceId.'}';
 
         return self::curl('/api/permissions/geofences','DELETE',$cookie ,$data,array(self::$json));
     }
 
-    public static function addDeviceGeofance($deviceId,$geofenceId,$cookie) {
+    public static function addDeviceGeofence($deviceId,$geofenceId,$cookie) {
 
         $data='{"deviceId":'.$deviceId.',"geofenceId":'.$geofenceId.'}';
 
         return self::curl('/api/devices/geofences','POST',$cookie ,$data,array(self::$json));
     }
 
-    public static function deleteDeviceGeofance($deviceId,$geofenceId,$cookie) {
+    public static function deleteDeviceGeofence($deviceId,$geofenceId,$cookie) {
 
         $data='{"deviceId":'.$deviceId.',"geofenceId":'.$geofenceId.'}';
 
@@ -159,7 +159,7 @@ class traccar {
         return self::curl('/api/positions?'.$data,'GET',$cookie ,'',array());
     }
 
-    public static function commandtypes($deviceId,$cookie) {
+    public static function commandTypes($deviceId,$cookie) {
 
         $data='deviceId='.$deviceId;
 
