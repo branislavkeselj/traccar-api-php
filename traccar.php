@@ -232,6 +232,9 @@ class traccar {
     }
 }
 
+
+//Example usage of login function below
+//Refer to examples.php for more examples
 $t=traccar::login($email,$password);
 
 if($t->responseCode=='200') {
